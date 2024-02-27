@@ -2,23 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Interactive Page with Flask</title>
+    <title>Create User</title>
 </head>
 <body>
-    <h1>Welcome to Our Interactive Page</h1>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    <form action="/submit" method="post">
-        <label for="name">Enter your name:</label>
-        <input type="text" id="name" name="name">
-        <button type="submit">Submit</button>
+    <h2>Create a New User</h2>
+    <form action="/create_user" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
